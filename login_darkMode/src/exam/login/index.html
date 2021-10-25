@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>login</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="./main.js" type="text/javascript" defer></script>
+  </head>
+  <body>
+    <a href="../../../index.html">Main</a>
+    <!-- 코드 구현 -->
+    <form method="get" onsubmit="login();">
+      <div class="box">
+        <label>아이디  <input id="id" size="15" type="text" name="id"/></label>
+      </div>
+      <div class="box">
+        <label>비밀번호  <input id="pw" onkeyup="printMsg();" size="15" type="password" name="password"/></label>
+      </div>
+      <div id="pw_msg"></div>
+      <button id="btn" type="submit" name="submit_btn" disabled="disabled">로그인</button>
+    </form>
+  </body>
+</html>
