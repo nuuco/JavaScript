@@ -1,0 +1,39 @@
+nav{position: relative;}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    margin: 2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav:first-child{
+    display: flex;
+    justify-content: center;
+}
+
+nav:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#horizontal-underline{
+    position: absolute;
+    width: 0;
+    height: 4px;
+    top: 0;
+    left: 0;
+    background-color: pink;
+    transition: .5s;
+}
+
+#vertical-underline{
+    position: absolute;
+    width: 0;
+    height: 4px;
+    top: 0;
+    left: 0;
+    background-color: skyblue;
+    transition: .5s;
+}
