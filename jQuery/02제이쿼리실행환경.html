@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02제이쿼리 실행환경</title>
+	<!--제이쿼리를 먼저 연결해야한다.-->
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		//앞선 1강에서 jQuery 라는 단어가 너무 많이 반복된다.
+		// jQuery 를 $ 로 표시할 수 있는 환경을 세팅하자.
+		// 인수로 jQuery 를 넘겨주고, 파라미터인 $ 로 받아오는 형식
+		/* 
+		function func($){
+			//인수로 들어온 jQuery 가 파라미터 $ 가 되었다.
+		}
+
+		func(jQuery);
+		*/
+
+		/*
+			자가실행함수 : 따로 호출 없이 딱 한번만 자동으로 실행되는 함수
+			1. function(){}()
+			   : function(){}를 호출한다. -> + ()
+			
+			2. (function(){})()
+			   : 근데 ()가 두 개면 뭐부터 실행해야될지 컴퓨터가 모른다.
+				 그러니 함수선언부분을 ()로 한 번 더 묶는다.
+
+			3. ;(function(){})()
+			   : 선행되어 실행되고 있는 문장들이 제대로 끝내지 않아
+			   	 오류가 나는 경우가 있어 앞에 세미콜론(;)을 붙인다.
+			   : 자가실행함수의 시그니쳐처럼 사용된다. 
+			
+			;(function(매개변수){
+				//--실행코드--//
+			})(인수);
+
+		*/
+		;(function(a){
+			console.log(a);
+		})(77);
+
+		;(function($){  //$ _ 는 식별자로 사용가능, 
+			console.log($);
+		})(66);
+
+
+		//--반복되는 jQuery 단어를 간단히 쓰기위한 코드 : $ = jQuery --//
+		//이 4줄을 항상 먼저 써주자!-> 제이쿼리를 쓰려면 이 코드가 필요해!
+		;(function($){  //$ = jQuery
+			$(function(){
+				//--실행코드--//
+			});  // = jQuery(함수); -> 함수를 실행할 때 사용
+		})(jQuery);  //-> jQuery 를 인자로 받아 $라는 매개변수로 쓰겠다.
+
+
+
+		jQuery(function(){
+			jQuery("body").css("background", "#cff").text("안녕하세요").css("color", "red");
+			//함수().함수().함수(); = 함수체인(or 메소드체인)
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
