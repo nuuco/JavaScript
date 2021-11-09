@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>01 제이쿼리 시작하기</title>
+	<!--제이쿼리가 먼저 연결되어 있어야 한다.-->
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+
+		function init(){
+			var b = jQuery("body");
+			/* jQuery() 
+				: 제이쿼리 함수
+				  인수로 받은 대상을 기준으로 제이쿼리 객체를 반환한다.
+				  -> 즉, b는 객체. 이 객체에 접근해 원하는 값을 가져온다.
+				  -> 즉, jQuery().css 이런 식으로 . 으로 속성에 접근할 수 있다. jQuery() 는 객체니까!
+			*/
+	
+			b.css("background", "#ffc");
+	
+			jQuery("#box").css("width", 200);
+			jQuery("#box").css("height", 100);
+			jQuery("#box").css("background", "red");
+
+			jQuery("#box").css("width", 200).css("height", 100).css("background", "red")
+			//함수().함수().함수(); = 함수체인(or 메소드체인)
+			//이런 식으로 연결해서 쓸 수도 있다.
+		}	
+
+		//jQuery("document").ready(init); - 줄여서 jQuery(init); 으로 사용
+		jQuery(init);  
+		//jQery()는 원래 제이쿼리 객체를 만드는 함수지만,
+		//문서가 준비완료되면, 실행시킴.
+		/*
+			jQuery("선택자"); -> 선택자에 해당하는 제이쿼리 객체를 반환
+			jQuery(함수명); -> 문서가 준비완료되면, 함수 실행 /원래 jQuery("document").ready(함수명)임.
+		*/
+
+		/*
+			document = 웹문서
+			ready() : 대상이 웹브라우저에 준비가 되면 인수로 받은 함수를 호출
+			-> body 맨 끝 부분에 <script> 태그로 함수 호출하는 것과 같다. 
+		*/
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>
