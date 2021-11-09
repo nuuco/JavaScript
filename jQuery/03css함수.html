@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03CSS함수</title>
+	<style>
+		#this{width: 100px; height: 50px; background: #ffc; font-size: 30px;}
+	</style>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		;(function($){
+			$(function(){
+				//$ = jQuery
+
+				var item = $("#this");
+				//#this를 대상으로한 제이쿼리 객체 생성
+
+				/*  css() 함수의
+					인수가 하나인 경우
+					: 해당 속성의 속성값을 추출하여 반환한다.(문자로 추출)
+				*/
+				var w = item.css("width");
+				var h = item.css("hight");
+				console.log(w);  //"100px"
+				console.log(h);  //"50px" -> 문자로 추출됨
+				
+				/*  css() 함수의 
+					인수가 두 개인 경우
+					: 해당 속성의 속성값을 적용하여, 인라인스타일을 설정함.
+				*/
+				item.css("height", 200);
+				$(".clone").css("background", "#f00");
+				$(".clone").css("height", w);
+				h = parseInt(h);  
+				//parseInt() : 내장함수(js), 문자 "50px"를 숫자(50)로 반환
+				//내장함수라 적용이 안된다.
+				$(".clone").css("width", h*4); //
+
+
+				/*	css() 함수의
+					인수가 객체인 경우
+					: 객체 안에 설정된 여러 속성들을 적용시킴
+				*/
+				var obj = {width: 200, background: "#0f0", textAlign: "center"};
+
+				item.css(obj);
+
+
+				$(".clone").css({fontSize: 50, fontWeight: "bold", borderWidth: 10, borderStyle: "solid", borderColor: "#000"});
+
+				//css 처럼 속성명에 font-size 라고 -를 쓰면 '-'가 연산자로 쓰이기 때문에 대문자로 바꿔준다.
+				//font-size => fontSize 
+				
+
+
+			});//end: $();
+		})(jQuery);
+
+	</script>
+</head>
+<body>
+	<div id="this">this</div>
+	<div class="clone">clone</div>
+</body>
+</html>
