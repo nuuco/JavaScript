@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04 이벤트제어</title>
+	<style>
+		a{font-size: 30px; background: #000; color: #fff;
+			font-weight: bold; padding: 0 10px; margin: 0 10px;
+			cursor: pointer;}
+	</style>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		;(function($){
+
+			$(function(){
+
+				/* 이벤트 : 브라우저 내에서 발생하는 사건으로, 
+							행위나 상태의 변화, 동작같은 상황을 뜻한다. 
+							(클릭, 마우스 오버, 크기조절, 드래그, 오픈, 스크롤... ) */
+
+				var body = $("body");
+				body.css("background", "gray");
+
+				function bgChange() {
+					body.css("background", "red");
+				}
+
+				/* click() : 대상을 클릭하면, 인수로 받은 함수를 실행시킴 */
+				$(".btn1").click(bgChange);
+
+				$(".btn2").click(function(){
+					body.css("background", "blue");
+				});
+
+				/* mouseover() : 대상에 마우스를 올렸을 때,
+								 인수로 받은 함수를 실행 */
+				$(".btn3").mouseover(function(){
+					body.css("background", "green");
+				});
+				
+				/* mouseout() : 대상에 마우스를 내렸을 때,
+								 인수로 받은 함수를 실행 */
+				$(".btn4").mouseout(function(){
+					body.css("background", "yellow");
+				});
+
+				/* hover() : 인수 2개 필요 
+					- 첫번째 인수 : 마우스를 올렸을 때, 호출되는 함수
+					- 두번째 인수 : 마우스를 내렸을 때, 호출되는 함수 */
+
+				function overAction(){
+					body.css("background", "cyan");
+				}
+
+				function outAction(){
+					body.css("background", "purple");
+				}
+
+				$(".btn5").hover(overAction, outAction);
+
+				$(".btn6").hover(function(){
+					body.css("background", "pink");
+				}, function(){
+					body.css("background", "brown");
+				});  
+
+				/* on() : 인수 2개 필요
+					- 첫번째 인수 : 적용할 이벤트(여러 이벤트 설정 가능)
+					- 두번째 인수 : 실행할 함수 */
+
+				$(window).on("resize scroll", function(){
+					body.css("background", "skyblue");
+				})
+
+				//window : 화면, 브라우저창
+				//resize : 창이 크기조절 될 때
+				//scroll : 스크롤 조작할 때
+
+				body.css("height", 3000);
+				
+			}); //end:$()
+			
+
+		})(jQuery);
+
+		/*
+			jQuery() = $();
+
+			$("대상") : 대상을 기준으로 한 제이쿼리 객체 생성
+			$(함수) : 웹문서가 준비완료되면, 함수를 호출함.
+
+			//제이쿼리 객체로 만들기 -> 이래야 제이쿼리 함수와 변수를 만들 수 있음.
+		*/
+
+	</script>
+</head>
+<body>
+	<a class="btn1">red</a>
+	<a class="btn2">blue</a>
+	<a class="btn3">green</a>
+	<a class="btn4">yellow</a>
+	<a class="btn5">cyan</a>
+	<a class="btn6">pink</a>
+</body>
+</html>
