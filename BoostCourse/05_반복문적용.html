@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문으로 링크 색상 바꾸기</title>
+    <style>
+        p{width: 500px; line-height: 1.8;}
+    </style>
+</head>
+<body>
+    <h1><a href="#">WEB</a></h1>
+    <input type="button" value="night" onclick="
+        var target = document.querySelector('body');
+
+        var bg_color = 'white';
+        var text_color = 'black';
+        var link_color = 'blue';
+
+        if(this.value == 'night'){
+            this.value = 'day';
+            bg_color = 'black';
+            text_color = 'white';
+            link_color = 'powderblue';
+        }else {
+            this.value = 'night';
+            bg_color = 'white';
+            text_color = 'black';
+            link_color = 'blue';
+        }
+       
+        target.style.backgroundColor = bg_color;
+        target.style.color = text_color;
+
+        var links = document.querySelectorAll('a');
+        for(let i = 0; i < links.length; i++){
+            links[i].style.color = link_color;
+        }
+        //.querySelectorAll('a'); -> 모든 a 태그를 배열로 가져옴
+
+    " />
+    <!--onclick의 속성의 값으로는 자바스크립트가 와야한다.-->
+    <!--css 속성으로는 background-color 지만 js 에서 쓸 때는 backgroundColor (카멜 표기법)-->
+    <ol>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+
+     <h2>JavaScript</h2>
+     <p>
+        JavaScript (JS)는 가벼운, 인터프리터 혹은 just-in-time 컴파일 프로그래밍 언어로, 일급 함수를 지원합니다. 웹 페이지를 위한 스크립트 언어로 잘 알려져 있지만, Node.js, Apache CouchDB, Adobe Acrobat처럼 많은 비 브라우저 환경에서도 사용하고 있습니다. JavaScript는 프로토타입 기반, 다중 패러다임, 단일 스레드, 동적 언어로, 객체지향형, 명령형, 선언형(함수형 프로그래밍 등) 스타일을 지원합니다. 자세한 내용은 JavaScript에 대하여를 참고하세요.
+     </p>
+    
+</body>
+</html>
