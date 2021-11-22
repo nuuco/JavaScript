@@ -17,7 +17,7 @@
                 }
             }
         };
-
+        
         var Body = {
             setColor : function (color){
                 document.querySelector('body').style.color = color;
@@ -26,9 +26,10 @@
                 document.querySelector('body').style.backgroundColor = color;
             }
         }
+        //따로 객체로 묶어주면 같은 이름의 함수를 써도 ok
 
         function nightDayHandler(self){
-
+        
             if(self.value == 'night'){
                 self.value = 'day';
                 Body.setBackgroundColor('black');
@@ -40,8 +41,9 @@
                 Body.setColor('black');
                 Links.setColor('blue');
             }
-           
+            
         }
+        
     </script>
 </head>
 <body>
