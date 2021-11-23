@@ -22,7 +22,7 @@
 					: 해당 속성의 속성값을 추출하여 반환한다.(문자로 추출)
 				*/
 				var w = item.css("width");
-				var h = item.css("hight");
+				var h = item.css("height");
 				console.log(w);  //"100px"
 				console.log(h);  //"50px" -> 문자로 추출됨
 				
@@ -35,9 +35,8 @@
 				$(".clone").css("height", w);
 				h = parseInt(h);  
 				//parseInt() : 내장함수(js), 문자 "50px"를 숫자(50)로 반환
-				//내장함수라 적용이 안된다.
-				$(".clone").css("width", h*4); //
-
+				$(".clone").css("width", h*10); 
+				
 
 				/*	css() 함수의
 					인수가 객체인 경우
