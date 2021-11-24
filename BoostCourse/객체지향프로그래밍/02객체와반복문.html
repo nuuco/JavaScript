@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체의 기본</title>
+</head>
+<body>
+<script>
+    var memberArray = ['egoing', 'graphittie', 'leezhce'];
+
+    console.group('array loop');
+    var i = 0;
+    while(i < memberArray.length){
+        console.log(memberArray[i]);
+        i ++;
+    }
+    console.groupEnd('array loop');
+
+
+    console.group('object loop');
+    var memberObject = {
+        manager: 'egoing',
+        developer: 'graphittie',
+        designer: 'leezhce'
+    }
+    
+    //for ... in 객체에 쓸 수 있는 반복문
+    for(var key in memberObject){
+        console.log(key, memberObject[key]);
+    }
+    
+    console.groupEnd('object loop');
+
+
+</script>
+</body>
+</html>
