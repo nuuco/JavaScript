@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <script>
+        //this
+        //어떤 메소드에서 그 메소드가 속해 있는 객체를 가리키는 특수한 키워드
+        //자기자신, 인간의 '나의' 'my' 와 같은 의미로 이해
+        var kim = {
+            name: 'kim',
+            first: 10,
+            second: 20,
+            sum: function(){
+                //return kim.first + kim.second;
+                return this.first + this.second;
+            }
+        }
+
+    </script>
+</body>
+</html>
