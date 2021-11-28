@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 class</title>
+</head>
+<body>
+    <script>
+        /*
+        클래스 class
+        객체를 만드는 공장, contructor의 대체재라고 할 수 있다.
+        */
+
+        /*
+        function Person(name,first,second,third){
+            this.name = name;
+            this.first = first;
+            this.second = second;
+            this.third = third;
+        }
+        
+        Person.prototype.sum = function(){ 
+            return "prototype " + (this.first+this.second+this.third);
+        }
+
+        var kim = new Person('kim',10,20,30);
+        var lee = new Person('lee',10,10,10);
+
+        -> 이것과 같은 것을 class 로 구현한다고 할 때.
+        */
+        class Person {  //객체를 만들 수 있음.
+            constructor(name,first,second,third){
+                //반드시 constructor 라고 써주야함.
+                //기존 생성자와 같은 역할 = 초기 상태 세팅
+                this.name = name;
+                this.first = first;
+                this.second = second;
+                this.third = third;
+            }
+            sum(){ 
+                return "prototype " + (this.first+this.second+this.third);
+            }
+        }
+
+        var kim = new Person('kim', 10, 20, 30);  //객체 생성 (생성자 쓸 때와 같음)
+
+        console.log('kim', kim); //kim Person {name: 'kim', first: 10, second: 20, third: 30}       
+        console.log('kim.sum()', kim.sum()); //kim.sum() prototype 60
+
+        //특정 객체만 수정하고 싶으면 기존과 똑같은 방법 사용
+        kim.sum = function(){
+            return 'this : ' + (this.first+this.second);
+        }
+    </script>
+</body>
+</html>
