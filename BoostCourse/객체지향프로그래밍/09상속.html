@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 class</title>
+</head>
+<body>
+    <script>
+        class Person {  //객체를 만들 수 있음.
+            constructor(name,first,second,third){
+                //반드시 constructor 라고 써주야함.
+                //기존 생성자와 같은 역할 = 초기 상태 세팅
+                this.name = name;
+                this.first = first;
+                this.second = second;
+                this.third = third;
+            }
+            sum(){ 
+                return "sum " + (this.first+this.second+this.third);
+            }
+        }
+        //만약 class 가
+        //남이 짠 코드라 수정할 수 없는 경우나 
+        //추가하고 싶은 기능이 거의 사용되지 않는 경우 => 상속을 쓰자!
+
+        class PersonPlus extends Person{
+            avg() {
+                return "avg " + (this.first+this.second+this.third)/3;
+            }
+        }
+
+        var kim = new PersonPlus('kim', 10, 20, 30);
+
+        console.log(kim);
+        //PersonPlus {name: 'kim', first: 10, second: 20, third: 30}
+
+        console.log(kim.sum());  //sum 60
+        console.log(kim.avg());  //avg 20
+
+
+    </script>
+</body>
+</html>
