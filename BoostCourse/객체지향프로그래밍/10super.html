@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super</title>
+</head>
+<body>
+    <script>
+        class Person {  //객체를 만들 수 있음.
+            constructor(name,first,second,third){
+                //반드시 constructor 라고 써주야함.
+                //기존 생성자와 같은 역할 = 초기 상태 세팅
+                this.name = name;
+                this.first = first;
+                this.second = second;
+                this.third = third;
+            }
+            sum(){ 
+                return (this.first+this.second+this.third);
+            }
+        }
+
+        //만약 자식 class 에서 인수를 하나 더 받고 싶다면? 
+        class PersonPlus extends Person{
+            constructor(name,first,second,third,fourth){
+                //super 의 용법
+                // 1. 부모 클래스의 생성자 호출 - super()
+                super(name, first, second, third);  
+                this.fourth = fourth;
+            }
+            sum(){ 
+                return "sum " + (super.sum()+this.fourth);
+                //2. 부모 클래스 를 의미 - .으로 접근해 속성 사용
+                //super.sum()
+            }
+
+            avg() {
+                return "avg " + (this.first+this.second+this.third+this.fourth)/4;
+            }
+        }
+
+        var kim = new PersonPlus('kim', 10, 20, 30, 10);
+
+        console.log(kim);
+        //PersonPlus {name: 'kim', first: 10, second: 20, third: 30}
+
+        console.log(kim.sum());  //sum 70
+        console.log(kim.avg());  //avg 17.5
+
+    </script>
+</body>
+</html>
