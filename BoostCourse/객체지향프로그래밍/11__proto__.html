@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__proto__</title>
+</head>
+<body>
+    <script>
+        var superObj = {superVal : 'super'}; //부모 객체
+        var subObj = {subVal : 'sub'};  //자식 객체
+        //js 에서는 객체끼리 상속을 줄 수 있다.
+
+        //subObj의 원형이 무엇이가? 를 가리키는 prototype link를 전해주면된다.
+        //어떻게? __proto__ 라는 속성에 부모 객체를 지정해주면 된다.
+        subObj.__proto__ = superObj;
+        console.log('subObj.subVal => ', subObj.subVal);  //subObj.subVal =>  sub
+        console.log('subObj.superVal => ', subObj.superVal); //subObj.superVal =>  super
+
+        //자식 객체의 속성에 없으면, 부모 객체에서 속성을 찾는다.
+
+        subObj.superVal = 'sub';
+        //객체의 속성을 바꿔도 __proto__의 속성은 바뀌지 않는다.
+        console.log('superObj.superVal => ', superObj.superVal); //superObj.superVal =>  super
+        //여전히 superObj 의 값은 super 다.
+        console.log('subObj.superVal => ', subObj.superVal); //subObj.superVal =>  sub
+
+
+        //__proto__ 속성만 바꾸면 객체의 부모가 바뀐다!
+        //__proto__ 는 js 표준은 아니나 사실상은 표준.
+        //하지만 이렇게 상속받는 것은 정석이라고 할 수 없음.
+    </script>
+</body>
+</html>
