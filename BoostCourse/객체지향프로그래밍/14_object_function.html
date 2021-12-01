@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체와 함수</title>
+</head>
+<body>
+    <script>
+        var kim = {name: "kim", first: 10, second: 20};
+        var lee = {name: "lee", first: 10, second: 10};
+
+        function sum(){
+            //this = kim; <- call 인자로 넣은 객체가 this 로 설정됨.
+            return this.first + this.second;
+        }
+        
+        //sum 함수를 
+        
+        //sum.call() = sum();
+        //call(객체) -> sum 함수가 객체의 메서드가 된다.
+        //객체 밖에 정의된 함수를 객체의 메서드처럼 동작시키고 싶을 때 사용
+        console.log("sum.call(kim) ", sum.call(kim));
+        console.log("sum.call(lee) ", sum.call(lee));
+        //모든 함수는 call 이라는 메서드를 가지고 있다.
+        //왜냐면 js 에서는 함수도 객체거든!
+        
+        function sumPlus(perfix) {
+            return perfix + (this.first + this.second);
+        }
+
+        //call()
+        console.log("sumPlus.call(kim, '=>')", sumPlus.call(kim, '=>'));
+        console.log("sumPlus.call(lee, ':')", sumPlus.call(lee, ':'));
+        /*
+        함수.call( 1, 2, 2 ... )
+        1) 함수의 this 가 될 객체
+        2) 함수의 파라미터들
+        */
+
+
+        //bind()
+        var kimSum = sum.bind(kim, '=>');
+        //bind는 호출한 함수를 변경하는 것이 아니라 
+        //인자로 받은 조건을 만족하는 새로운 함수를 리턴
+        //sum() 함수는 그대로
+        console.log("kimSum()", kimSum());
+
+
+
+
+    </script>
+</body>
+</html>
