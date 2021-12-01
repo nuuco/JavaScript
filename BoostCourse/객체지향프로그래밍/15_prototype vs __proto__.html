@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype vs __proto__</title>
+</head>
+<body>
+    <script>
+        function Person(name, first, second) {
+            this.name = name;
+            this.first = first;
+            this.second = second;
+        }
+
+        Person.prototype.sum = function() {
+            console.log(this.first + this.second);
+        }
+
+        var kim = new Person("kim", 10, 20);
+        var lee = new Person("lee", 10, 20);
+
+        console.log(kim.name); //kim
+        
+        kim.sum(); //30
+
+        kim.__proto__.avg = function() {
+            console.log((this.first + this.second)/2);
+        }
+
+        kim.avg(); //15
+
+        console.log(Person.prototype);
+        //{sum: ƒ, avg: ƒ, constructor: ƒ}
+
+    </script>
+</body>
+</html>
