@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__proto__</title>
+</head>
+<body>
+    <script>
+        //Object.create() 좀 더 표준화된 방법
+        var superObj = {superVal : 'super'}; 
+        //var subObj = {subVal : 'sub'};  
+        //subObj.__proto__ = superObj;
+        var subObj = Object.create(superObj);
+        subObj.subVal = 'sub';
+
+        debugger;
+        //debugger; js를 일시정지 시킬 수 있고, 객체들의 상태를 살펴볼 수 있다.
+        //객체 살피는 법 -> Sources 탭 -> Watch 에서 객체 검색 가능
+        
+        console.log('subObj.subVal => ', subObj.subVal);  //subObj.subVal =>  sub
+        console.log('subObj.superVal => ', subObj.superVal); //subObj.superVal =>  super
+
+
+        subObj.superVal = 'sub';
+        console.log('superObj.superVal => ', superObj.superVal); //superObj.superVal =>  super
+        console.log('subObj.superVal => ', subObj.superVal); //subObj.superVal =>  sub
+
+
+    </script>
+</body>
+</html>
