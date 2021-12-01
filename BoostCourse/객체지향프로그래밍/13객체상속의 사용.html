@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 상속의 사용</title>
+</head>
+<body>
+    <script>
+        var kim = {
+            name: "kim",
+            first: 10, second: 20,
+            sum: function() {
+                return this.first + this.second;
+            }
+        }
+
+        /* Object.create() 를 사용한 방법 */
+        var lee = Object.create(kim);
+        lee.name = "lee";
+        lee.first = 10;
+        lee.second = 10;
+
+
+        /* __proto__를 사용한 방법
+        lee = {
+            name: "lee",
+            first: 10, second: 10,
+            //sum 은 정의하기 싫어!
+        }
+
+        lee.__proto__ = kim;
+        */
+        console.log("lee.sum() => ", lee.sum());
+    </script>
+</body>
+</html>
