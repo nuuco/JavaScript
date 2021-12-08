@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert</title>
+    <style>
+        .alert-box {
+            background: rgb(187, 187, 255);
+            color: blue;
+            padding: 20px; 
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        1. 웹에 존재하는 UI 종류
+            : 모달, Alert, 탭, 툴팁, 서브메뉴, 경고문, 캐러셀
+        2. UI 만드는 법
+            (1) 미리 디자인 해놓고 숨김
+            (2) 버튼을 누르거나 하면 보여줌
+    -->
+    <div class="alert-box" id="alert">Alert 박스<button onclick="document.getElementById('alert').style.display = 'none';">닫기</button></div>
+    <button onclick="document.getElementById('alert').style.display = 'block';">버튼</button>
+
+    <script>
+
+    </script>
+</body>
+</html>

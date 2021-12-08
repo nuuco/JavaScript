@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert</title>
+    <style>
+        .alert-box {
+            background: rgb(187, 187, 255);
+            color: blue;
+            padding: 20px; 
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        function 문법 쓰는 이유
+            1. 긴 코드를 깔끔하게 한 단어로 축약 가능
+        
+        parameter 의 장점
+            : 함수 하나로 다양한 기능 만들기 가능
+    -->
+    <div class="alert-box" id="alert">Alert 박스<button onclick="alertHide()">닫기</button><button onclick="alertShow('none')">파라미터를 이용해서 닫기</button></div>
+    <button onclick="alertShow('block')">버튼</button>
+
+    
+
+    <script>
+        function alertShow(구멍) {
+            document.getElementById('alert').style.display = 구멍;
+        }
+
+        function alertHide() {
+            document.getElementById('alert').style.display = 'none';
+        }
+
+        function 함수명(구멍1, 구멍2, 구멍3) {
+            console.log(구멍1 + 구멍2 + 구멍3);
+        }
+    </script>
+</body>
+</html>

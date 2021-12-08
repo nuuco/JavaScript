@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파라미터</title>
+    <style>
+        .alert-box {
+            background: rgb(187, 187, 255);
+            color: blue;
+            padding: 20px; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p>Alert 박스</p>
+        <button onclick="alert('none', '닫기')">X</button>
+    </div>
+    <button onclick="alert('block', 'ID')">ID 버튼</button>
+    <button onclick="alert('block', 'PW')">PW 버튼</button>
+    
+
+    <script>
+        function alert(showHide, str) {
+            document.getElementById('alert').style.display = showHide;
+            document.querySelector('#alert p').innerText = str + '을 입력해주세요.';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파라미터</title>
+
+    <style>
+        .yellow-bg {
+            background-color: yellow;
+        }
+
+        .alert-box {
+            background: rgb(187, 187, 255);
+            color: blue;
+            padding: 20px; 
+            border-radius: 5px;
+        }
+        p {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <!--jQuery 라이브러리-->
+    <h1 class="title">안녕하세요</h1>
+    <div class="alert-box" id="alert">
+        <p>Alert 박스</p>
+        <button id="close">X</button>
+    </div>
+    <button onclick="alert('block', 'ID')">ID 버튼</button>
+    <button onclick="alert('block', 'PW')">PW 버튼</button>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $('.title').html('안녕!');
+        $('.title').css('color', 'salmon');
+        $('.title').addClass('yellow-bg');
+        $('.title').attr('id', 'hello');
+        $('#hello').css({width: 500});
+
+        //document.querySelector('.title') -> 같은 동작이나, 하나밖에 못찾음.
+        //document.querySelectorAll('.title')[0] -> 여러개 찾으나, 인덱스 붙여줘야함. 
+
+        document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('alert').style.display = 'none';
+        });
+
+        function alert(showHide, str) {
+            document.getElementById('alert').style.display = showHide;
+            document.querySelector('#alert p').innerText = str + '을 입력해주세요.';
+        }
+    </script>
+</body>
+</html>
