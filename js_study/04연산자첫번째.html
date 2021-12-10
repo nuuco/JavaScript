@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04연산자첫번째(p326)</title>
+
+	<script>
+		/*
+			연산자(연산기호) : 좌변과 우변을 연산하여, 하나의 값을 도출
+		*/
+		var a=10, b=5, c=3, d=2; //변수 선언
+
+		/* 산술연산자(+ - * / %) */
+		console.log(a+b);  //더하기 15
+		console.log(a-b);  //빼기 5
+		console.log(a*c);  //곱하기 30
+		console.log(a/d);  //나누기 5
+		console.log(a%c);  //나머지 1 (나머지 연산자 327p)
+
+		/* 연산의 우선순위 */
+		console.log(a+b*c);  //25
+
+		/* 문자연결연산자(+) */
+		console.log(100+a); //110 산술연산자
+		console.log("파란" + "하늘");  //파란하늘
+		console.log(100 + 'a');  //100a -> 둘 중 하나라도 문자면 문자가 된다.
+		console.log("변수 a : " + a);  //10
+		console.log("text" + 100 + 4); //text1004 -> 앞이 먼저 연산되면, 문자가 되니까.
+		console.log("text" + (100 + 4)); //text104 -> 괄호부터 연산된다.
+		console.log("변수b: " + b + ", 변수c: " + c); //변수b: 5,변수c: 3
+
+		/* 템플릿문자열(ES6) : 백틱/백쿼트 */
+
+		console.log(`내 나이 ${a}살.`);
+		console.log(`변수b: ${b}, 변수c: ${c}`);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

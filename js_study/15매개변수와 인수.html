@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>15매개변수와 인수</title>
+	<script>
+		//함수선언
+		function slidy_1(ob){  //매개변수ob : 하나의 값을 가지는 변수
+			console.log("slidy_1 함수실행");
+			var value = ob + 5;  //ob는 값으로써 연산되어야 한다.
+			console.log("slidy_1의 value값 : " + value);
+
+		}
+		//함수선언
+		function slidy_2(ob){  //매개변수ob : 함수타입(변수x)
+			console.log("slidy_2 함수실행");
+			ob();  //ob()는 함수로써 호출된다.
+		}
+
+		function slidy_3(ob){  //매개변수ob : 객체타입
+			console.log("slidy_3 함수실행");
+			var value = ob.width + ob.height;
+			console.log("slidy_3의 value값 : " + value);
+		}
+
+		//객체선언
+		var object = {width: 100, height: 66};
+
+
+		//함수호출
+		slidy_3(object);
+		slidy_3({width: 40, height: 33});  //호출할 때 객체타입 매개변수를 넣어주는 것! 
+
+
+		slidy_1(10);  //인수
+
+		function printText() {
+			console.log("printText함수");
+		}
+
+		slidy_2(printText);
+
+		slidy_2(function(){
+			console.log("익명함수를 인수로 넣음!");
+		});
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

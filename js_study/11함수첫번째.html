@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>11함수첫번째 (353p)</title>
+	<script>
+		/*
+			함수 : 일련의 처리과정(실행문)을 묶어놓고, 이름을 부여한 것.
+		*/
+
+		//함수호출
+		noodle(); //가능
+		//coffee();  //불가능
+
+		//함수 선언 (함수선언식)
+		function noodle(){
+			console.log("1. 물을 끓인다."); 
+			console.log("2. 면을 삶는다."); 
+			console.log("3. 스프를 넣는다."); 
+		}
+
+		//함수와 변수의 차이는 뒤에 ()가 있냐 없냐의 차이!
+
+		//함수 선언(함수표현식)
+		var coffee = function(){  //익명함수 : 이름이 없는 함수
+			console.log("a. 원두를 갈다.");
+			console.log("b. 물을 끓인다.");
+			console.log("c. 커피를 내린다.");
+			console.log("d. 얼음을 넣는다.");
+		}; 
+
+
+
+
+
+
+		//함수 호출
+		noodle();
+		coffee();
+
+
+		console.log("***************");
+		noodle();
+		coffee();
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

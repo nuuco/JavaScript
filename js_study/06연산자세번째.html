@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>06연산자세번째</title>
+
+	<script>
+		//변수 선언
+		var aa = 10;
+		//상수 선언
+		const BB = 5;
+
+		/* 비교연산자(==, >, >=, <, <=, != )  333p 
+			: 좌변과 우변을 비교하여, 결과를 논리값으로 추출한다. */
+
+		console.log(aa == BB);  //false
+		console.log(aa > BB);  //true
+		console.log(aa >= BB);  //true
+		console.log(aa < BB);  //false
+		console.log(aa <= BB);  //false
+		console.log(aa != BB);  //true
+
+		/* 논리연산자(&&, ||, !) 335p 
+			: 두 개의 논리값을 연산하여 하나의 논리값을 추출 */
+		
+		//and 연산자(&&) : 좌변과 우변이 모두 true 일 경우, true
+		console.log(true && true);  //true
+		console.log(true && false); //false
+		console.log(false && true); //false
+ 		console.log(false && false);  //false
+
+
+		//or 연산자(||) : 좌변과 우변 중 단 하나라도 true 면, true
+		console.log(true || true);  //true
+		console.log(true || false); //true
+		console.log(false || true); //true
+ 		console.log(false || false);  //false
+
+		console.log((aa > 10) && (BB == 5)); //false
+
+		console.log((aa >= 10) && (BB > 4) && (aa + BB > 11));  //true
+		console.log((BB == 5) && (aa < BB) || (aa != 11));  //true
+
+		//논리부정연산자 (!) : 논리값을 반전시킴
+		console.log(!true); //false
+		console.log(!(aa<BB));  //true
+
+		/* 조건 연산자 (?:) = 삼팡연산자 339p */
+		
+		let fruit = true ? "딸기" : "사과";
+		
+		console.log(fruit); //딸기
+
+
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

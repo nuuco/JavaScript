@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02변수(315p)</title>
+	<script>
+		/*
+			변수(variable) : 특정한 값(데이터)을 저장하기 위한 수
+		*/
+
+		var a; //a 라는 변수를 생성 (= 선언)
+		a = 10; //변수a 에 값10을 넣음.
+
+		a + 5; //결과는 15
+
+		document.write(a + 5);
+
+		console.log(1234); //괄호안에 있는 값(1234)를 콘솔창에 출력
+
+		console.log(a); //출력되는 값 : 10
+		// 변수 a 를 호출하면, a 안의 들어 있는 값을 불러온다.
+
+		console.log(a + 5); //출력되는 값: 15
+
+		a = 20;
+
+		console.log(a + 7); //출력되는 값: 27
+
+
+		/* var = 예약어 : 미리 약속된 기능을 하기위해 만들어진 명령어 */
+		var b = 5;  //변수b를 선언하고, 값5를 넣음.
+
+		console.log(a+b); //출력되는 값 : 25
+
+		//317p
+		var c,d; //변수c와 d 를 선언
+		var e,f = 8,g; 
+		/* 변수e,f,g 를 선언하고 f에만 값8을 넣음 */
+		console.log(e); //undefined
+
+		/*
+			식별자 : 변수명, 함수명과 같이 선언된 명령어
+			식별자 선정시 주의사항
+			1. 띄어쓰기 안됨.
+			2. 첫글자는 숫자를 불가. only 숫자로만 되어 있으면 안됨.
+			3. 특수문자(_), 특수문자($)는 사용가능
+			4. 예약어는 변수명으로 사용할 수 없다.
+			5. 대소문자 구분한다.
+		*/
+
+		var A = 12;
+
+		console.log(A); //대소문자 구분
+
+		let h = 100; //변수선언
+		//변수를 선언할 때 예약어가 'var' 또는 'let'을 쓴다.
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

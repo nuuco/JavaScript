@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>12함수두번째</title>
+	<script>
+	/*매개변수와 인수*/
+	var a = 10;
+	var b = 5;
+
+	function sum(x, y){  //x 와 y 는 매개변수(parameter)
+		var value = x + y;
+		//블록(구역) 안에서 선언된 변수는 생성된 블록안에서만 효력을 지닌다.
+		console.log("두 수의 합은 : " + value);
+	}
+
+	//함수를 호출할 때 각 매개변수에 들어갈 값을 순차적으로 지정해줘야한다.
+	//각 매개변수에 들어가는 값을 '인수'라고 한다.
+	sum(a, b);  //인수(argument) 인수7은 매개변수x, 인수9는 매개변수y에 값이 들어간다.
+	sum(7, 9);
+	sum(20, 16);
+
+
+	//console.log("value : " + value);
+	//변수 value 는 선언된 블록(지연) 밖에서 호출할 수 없다.
+
+	function sub(x = 10, y = 3){  //각 매개변수(parameter)에 기본값을 설정함. -> 인수가 안들어오면 이걸 씀.
+		var value = x - y;
+		console.log("두 수의 차는 : " + value);
+	}
+
+	sub(); //10-3 = 7 -> 인수(argument)가 없거나, 부족하면 기본값을 사용함.
+	sub(20); //20-3 = 17; 인수의 값이 부족하면 앞에서부터 채워진다.
+			 //x에는 20의 값을 넣고, y는 기본값 사용.
+	sub(100, 44); //100-44 = 56
+
+	//기본값이 일부만 채워져 있는 경우
+	function mul(x, y = 2) {  //뒤에서부터 채워져 있어야한다.
+		var value = x*y;
+		console.log("두 수의 곱은 : " + value);
+	}
+
+	mul(10);  //20 -> x에 들어갈 인수값은 반드시 필요
+	mul(8, 9); //72
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

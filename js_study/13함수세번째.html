@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>13함수세번째</title>
+	<script>
+		/* 리턴값(반환값) */
+
+		function sum(x, y) {
+			var value = x + y;
+			console.log("value : " + value);
+			return value;  // 반환값
+			//반환값 : 함수가 실행되면, 호출된 위치에 반환되는 값
+			//함수의 종료 : return 다음에 오는 실행문들은 실행되지 않음.
+			console.log("sum 함수 안에 있는 실행문");
+
+		}
+
+		var a = sum(8, 6);  //14
+
+		var b = sum(20, 12);  //32
+
+		console.log("a : " + a); //14
+		console.log("b : " + b); //32
+
+		console.log("함수의 결과 : " + sum(7, 8)); //15
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

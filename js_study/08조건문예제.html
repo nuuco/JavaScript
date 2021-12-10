@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>08조건문예제</title>
+	<script>
+		//alert("경고창을 만드는 명렬어");
+		alert("안녕하세요!");
+
+		//prompt() : 값을 입력받을 수 있는 경고창
+		var month = prompt("지금은 몇 월인가요?");
+
+
+		if(month == 12 || month <= 2) {
+			document.write(month + "월이면, 겨울이겠군요!");
+		} else if(month <= 5) {
+			document.write(month + "월이면, 봄이겠군요!");
+		} else if(month <= 8) {
+			document.write(month + "월이면, 여름이겠군요!");
+		} else{
+			document.write(month + "월이면, 가을이겠군요!");
+		}
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

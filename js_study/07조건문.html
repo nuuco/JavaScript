@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>07조건문</title>
+
+	<script>
+		//프로그램은 문장단위로 실행되며, 순차적으로 진행된다.
+
+		/* 조건문 if : 조건을 만족하면 실행 */
+		console.log("실행문1");
+		if(true) console.log("실행문2");
+		if(false) console.log("실행문3");
+		if(5 > 10) console.log("실행문4");
+
+		//블록(block) : {} 여러 개의 실행문을 묶어서 젱할 경우 사용
+		if(false){
+			console.log("실행문5");
+			console.log("실행문6");
+			console.log("실행문7");
+		}
+		console.log("실행문8");
+		console.log("실행문9");
+
+
+		/* 조건 분기문(if ~ else ~) 
+		: 조건에 따라 두가지의 경우 중 하나만 실행. */
+
+		if(false) console.log("참입니다.");  //조건이 참인 경우
+		else console.log("거짓입니다."); //조건이 거짓인 경우
+
+		var num = 9;
+
+		if(num%2 == 0) console.log("num은 짝수입니다.");
+		else console.log("num은 홀수입니다.");
+
+
+		let hour = 17;
+		if(hour <= 12){
+			console.log("오전 " + hour + "시 입니다.");
+		} else{
+			hour -= 12;
+			console.log(`오후 ${hour}시 입니다. `);
+		}
+
+		/* 다중 if 문 : if 문을 중첩하여 사용 */
+		if(false) console.log("첫번째 조건이 참입니다.");
+		else if(true) console.log("첫번째 조건 : 거짓, 두 번째 조건 : 참");
+		else consol.log("모든 조건이 거짓이면 실행된다.");
+
+
+		
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+

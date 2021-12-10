@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>09반복문(345p)</title>
+	<script>
+		/* 반복문(while) : 해당되는 문장을 반복하여 실행함.*/
+
+		console.log("실행문1");
+		if(false) console.log("실행문2");  //조건문
+		while(false) console.log("실행문3");  //반복문
+
+		/*반복문을 만들 때에는 [무한반복] 이 되지 않도록 해야한다.*/
+
+		var i = 1;
+
+		while(i<=10) {	//반복조건 : 조건은 반복할 때마다 검증
+			console.log(`반복문 : ${i}번째`);
+			i++;  //증가연산자 : 반복될 때마다 i는 1씩 증가.
+		}
+		//1~10 번째까지 실행된다.
+
+		console.log("현재 i의 값 : " + i);
+
+		/* 반복문(do ~ while 문) */
+		var j = 1;
+
+		do{
+			console.log(`do ~ while 문 ${j}번 반복`);
+			j++;
+		}while(j<=10);
+
+		console.log("현재 j의 값 : " + j);
+
+		/* 반복문 예제 : 1부터 100까지의 합 */
+
+		var total = 0;
+		var num = 1;
+
+		while(num <= 100){
+			total += num;  //현재 total 의 값에 num 의 값을 더함.(대입연산자)
+			num++; 
+		}
+
+		console.log(total);
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
