@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>07animate 메서드</title>
+	<style>
+		* {margin: 0; padding: 0;}
+		.container {display: flex; justify-content: space-around; align-items: center; background: skyblue; height: 70vh;}
+		button {height: 20vh; width: 15vw; position: relative;}
+		
+	</style>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		;(function($){
+			$(function(){
+				//자바스크립트 방법
+				/*
+				let buttons = document.getElementsByTagName('button');
+
+				for (let i = 0; i <= buttons.length; i++ ){
+					buttons[i].style.top = i * 40 - 40 + 'px';
+				}
+				*/
+
+				//제이쿼리 방법
+				let button = $('.container button');
+				//for문 안쓰고 이렇게만 해도 버튼 전부가 저장된다.
+				//각자마다 할 일(버튼마다)은 each() 메서드를 쓸 수 있다.
+
+				button.each(function(idx){
+					//메서드에서 내부적으로 인덱스 번호를 가져올수 있다. 
+					$(this).css({top: idx * 40 - 40});
+					//버튼들이 순서대로 this로 들어온다.
+				});
+				
+				
+			});
+		})(jQuery);
+
+
+	</script>
+</head>
+<body>
+	<div class="container">
+		<button>버튼 1</button>
+		<button>버튼 2</button>
+		<button>버튼 3</button>
+		<button>버튼 4</button>
+	</div>
+</body>
+</html>
