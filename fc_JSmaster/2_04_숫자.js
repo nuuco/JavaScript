@@ -15,13 +15,23 @@ Math.log(-1);   //NaN
 0*Infinity;
 7**NaN;
 "가" / 3;
+
+NaN == NaN;     // false
+NaN === NaN;     // false
+//이때문에 NaN 은 isNaN() 으로 판별해야함.
+
 //isNaN() vs Number.isNaN()
 //느슨하게 검사
+// 강제로 매개변수를 숫자로 변환해서 검사
+isNaN("NaN");    //true
 isNaN(undefined);    //true
 isNaN({});    //true
 isNaN('문자열');    //true
 
 //비교적 최신, ES2015+ (엄격하게 검사) -> 이거 쓰자!
+//Number 이면서, NaN 이면 true
+//강제로 매개변수를 숫자로 변환하지 않음
+Number.isNaN("NaN");  //false
 Number.isNaN(undefined);    //false
 Number.isNaN({});    //false
 Number.isNaN('문자열');    //false
