@@ -59,3 +59,16 @@ func instanceof Function;   //true
 undefined instanceof Object;    //false
 //null 은 원시값이기 때문에 false
 null instanceof Object; //false
+
+
+//기타 연산자
+//1. , - 모두 평가, 가장 오른쪽 결과 반환
+const comma = (123, 'abc', true);
+console.log(comma);  //true <- 가장 오른쪽 값이 들어옴
+
+//2. void - 표현식을 평가하고 undefined 를 반환하는 연산자
+//표현식 결과를 버릴 때 void 사용
+function voidFunction() {
+    //리턴값이 없을 때
+    //return undefined 와 같다.
+}
