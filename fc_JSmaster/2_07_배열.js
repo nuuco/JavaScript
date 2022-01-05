@@ -27,3 +27,98 @@ console.log(arr[7]);    //undefined
 //배열은 객체이다.
 arr.prop = [6, 7];
 console.log(arr);   //[ 1, 2, 3, 4, 5, <4 empty items>, 10, prop: [ 6, 7 ] ]
+console.log(arr.length);    //10
+
+//배열의 length 는 길이가 아니다.
+//배열에서 가장 높은 인덱스를 추적
+
+const arr3 = [1, 2, 3];
+arr3[9] = undefined;
+
+arr3.length;     //10
+arr3.length = 20;    //이렇게 해도 length가 늘어버림...
+console.log(arr3.length);    //20
+console.log(arr3);   //[ 1, 2, 3, <6 empty items>, undefined, <10 empty items> ]
+
+//배열 다루는 건 조심!
+arr3.length = 0;    //배열 초기화 됨
+console.log(arr3);   //[]
+//실제로 이렇게 length에 0을 넣어서 clear 하는 경우가 있다.
+
+//배열 순회
+const arr4 = ['a', 'b', 'c'];
+
+for (let i = 0; i < arr4.length; i++) {
+    console.log(arr4[i]);
+}   //
+
+let j = 0;
+while(j < arr4.length) {
+    console.log(arr4[j]);
+    j = j + 1;
+}   //
+
+//객체 순회 - 배열도 객체니까 가능하지만, 배열 순회에는 좋지 않음.
+//for ... in
+for (let key of arr4){
+    console.log("for of", key);
+}
+
+//for ... of
+for (let x of arr4){
+    console.log("for of", x);
+}
+
+//배열 다루기
+const squidMembers = ['기훈', '상우', '일남', '준호', '새벽', '알리'];
+
+//push() - 배열 끝에 요소 추가
+//unshift() - 배열 앞에 요소 추가
+squidMembers.push('덕수');
+squidMembers.unshift('미녀');
+squidMembers; //['미녀', '기훈', '상우', '일남', '준호', '새벽', '알리', '덕수'];
+
+//pop() - 배열 끝 요소 제거
+//shift() - 배열 앞 요소 제거
+squidMembers.pop(); //덕수 반환
+squidMembers.shift();   //미녀 반환
+squidMembers;   //['기훈', '상우', '일남', '준호', '새벽', '알리'];
+
+//배열에서 특정 인덱스 요소 지우기
+let index = squidMembers.indexOf('일남'); 
+squidMembers.splice(index, 2);  //['일남', '준호']
+//splice(시작 인덱스, 지울 개수); -> 지운 배열 반환
+console.log(squidMembers);  //['기훈', '상우', '새벽', '알리'];
+
+
+//indexOf() - 위치 인덱스 반환, 없으면 -1
+//0 번째 인덱스부터 찾음
+squidMembers.indexOf('새벽');   //4
+//lastIndexOf() - 위치 인덱스 반환, 없으면 -1
+//끝 인덱스부터 찾음.
+
+//includes() - 배열 요소 포함 여부 확인 - true, false
+squidMembers.includes('미녀');  //false
+
+
+//유사 배열 객체 (Array Like Object)
+//argument, nodelist
+//Array.isArray() 메서드를 활용해
+//js 사용할 수 있는 진짜 배열인지 확인한다.
+Array.isArray([]);      //true
+Array.isArray(arguments);      //false
+Array.isArray(nodeList);      //false
+
+//유사 배열 객체를 진짜 배열로 바꾸고 싶을 때
+//Array.from() 사용하면 된다.
+const nl = Array.from(nodeList);
+nl.push();     //이제 배열의 메서드들을 쓸 수 있다.
+
+
+
+/**
+🔹 원본 배열을 그대로 유지하는 메서드
+Concat, Slice
+🔸 원본 배열을 변경하는 메서드
+Push, Pop, Shift, Unshift, Splice
+ */
