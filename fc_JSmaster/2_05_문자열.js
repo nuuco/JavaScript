@@ -11,13 +11,20 @@ const multiLine =
 2\
 3'; //이렇게 \를 써줘야했다. 안 쓰면 오류남.
 
+console.log(multiLine);    //123
+
 ///하지만 ES2015+ 부터 백킷을 쓸 수 있어 개행 넣기 편해짐
 const multiLine2 =
 `1
 2
 3`;
 
-console.log(multiLine2);
+console.log(multiLine2);    
+/*
+1
+2
+3
+*/
 
 //빈문자열 만들 때 null 넣지말것. 연산할 때 문자열로 인식
 let empty = null;
