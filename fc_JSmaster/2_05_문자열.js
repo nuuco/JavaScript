@@ -51,13 +51,12 @@ paragraph.indexOf('hi');    //-1
 
 //객체(배열)를 문자열로 바꾸면
 String({name: 'john'}); //[object Object]
-String([1, 2, 3]); //1, 2, 3[object Object]
+console.log(String([1, 2, 3])); //1,2,3
 //-> 이렇게 나오기 때문에 JSON 사용해야함
 JSON.stringify({name: 'john'}); //{"name": "john"}
 JSON.stringify([1, 2, 3]); //[1, 2, 3]
 
-//toString() - Number, Object, Date 등 다양한 객체에 들어있는
-//문자열로 변환시키는 메서드
+//toString() - Number, Object, Date 등 다양한 객체에 들어있는 내용을 문자열로 변환시키는 메서드
 ['1', 123].toString();  //1,123
 
 //그 외 상황에서는 문자열 변환은 String()만으로 충분!
