@@ -24,7 +24,7 @@ if(age >= 10) {
 
 }
 
-//4. typeof - primitive 값을 타입 확인할 때 사용
+//4. typeof - primitive 값의 타입 확인할 때 사용
 //primitive => string, number, bigint, boolean, undefined, symbol, null
 
 typeof 'string';    //string
@@ -44,7 +44,7 @@ typeof new Boolean(true);   //object
 
 
 //5. instanceof - 객체의 인스턴스가 어떤 생성자로 생성된 것인지
-//reference 타입의 값인지 검사할 때 쓴다. 
+//reference 타입의 값을 검사할 때 쓴다. 
 //{} instanceof Object; -> true or false
 const obj = {};
 const arr = [];
@@ -63,12 +63,13 @@ null instanceof Object; //false
 
 //기타 연산자
 //1. , - 모두 평가, 가장 오른쪽 결과 반환
+// 각각의 피연산자를 왼쪽에서 오른쪽 순서로 평가하고, 마지막 연산자의 값을 반환
 const comma = (123, 'abc', true);
 console.log(comma);  //true <- 가장 오른쪽 값이 들어옴
 
 //2. void - 표현식을 평가하고 undefined 를 반환하는 연산자
 //표현식 결과를 버릴 때 void 사용
-function voidFunction() {
+void function Function() {
     //리턴값이 없을 때
     //return undefined 와 같다.
 }
