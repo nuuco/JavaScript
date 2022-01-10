@@ -40,7 +40,7 @@ arr3.length = 20;    //이렇게 해도 length가 늘어버림...
 console.log(arr3.length);    //20
 console.log(arr3);   //[ 1, 2, 3, <6 empty items>, undefined, <10 empty items> ]
 
-//배열 다루는 건 조심!
+//배열 길이 다루는 건 조심!
 arr3.length = 0;    //배열 초기화 됨
 console.log(arr3);   //[]
 //실제로 이렇게 length에 0을 넣어서 clear 하는 경우가 있다.
@@ -60,14 +60,35 @@ while(j < arr4.length) {
 
 //객체 순회 - 배열도 객체니까 가능하지만, 배열 순회에는 좋지 않음.
 //for ... in
-for (let key of arr4){
+for (let key in arr4){
     console.log("for of", key);
+    console.log("for of", arr4[key]);
 }
 
 //for ... of
 for (let x of arr4){
     console.log("for of", x);
 }
+
+let fruits = ["apple", "orange", "melon"]; 
+//1. use for (index)
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+//apple, orange, melon
+
+//2. use for ... (element) of
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+//apple, orange, melon
+
+//3. use for ...(key) in
+for (let key in fruits){
+    console.log(key);
+    console.log(fruits[key]);
+}
+//0, apple, 1, orange, 2, melon
 
 //배열 다루기
 const squidMembers = ['기훈', '상우', '일남', '준호', '새벽', '알리'];
