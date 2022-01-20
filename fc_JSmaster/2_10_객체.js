@@ -28,3 +28,98 @@ const newObject2 = Object.create(Object.prototype,
     },
 );
 
+//프로퍼티 열거
+
+const obj = {
+    prop1: 'value1',
+    prop2: 'value2',
+    prop3: 'value3',
+    prop4: 'value4',
+}
+
+obj.prop1;
+obj['prop1']; 
+obj['prop' + 1];
+
+for (const key in obj) {
+    //for in문에서 obj.key 로는 안됨.
+    //key 가 문자열 형태로 들어온다 생각하면 이해 됨.
+    console.log(obj[key]);
+}
+
+//객체 체이닝 - 자신의 프로토타입에 없는게 있으면 계속 위로 올라감.(체이닝)
+//이걸 방지하고자 - hasOwnProperty() 가 있다.
+//obj.hasOwnProperty(key) - 해당 키가 이 객체가 가지고 있는 게 맞느냐?
+for (const key in obj) {
+    if(obj.hasOwnProperty(key)){
+        console.log(obj[key]);
+    }
+}
+
+//프로퍼티 조작
+const person = {
+    firstName: 'jang',
+    location: 'korea',
+};
+
+//const 로 만들어도 객체는 새 프로퍼티 추가가능
+//const 는 재할당만 막는 것.
+//추가
+person.lastName = 'hayeon';
+//수정
+person.lastName = 'ha-yeon';
+//삭체 - delete 연산자
+delete person.location;
+
+console.log(person);    //{ firstName: 'jang', lastName: 'ha-yeon' }
+
+
+//프로퍼티 접근자(getter, setter)
+//좀 더 안전하게 접근 가능
+//일관적으로 접근 가능
+
+const person2 = {
+    _firstName: 'jang',
+    _lastName: 'hayeon',
+    
+    //get, set 을 기본 제공
+    get firstName() {
+        return this._firstName;
+    },
+
+    //set 은 인자로 뭔가를 받아야함
+    //이상한 값 들어오는 것 방지 가능
+    set firstName(newFirstName) {
+        if(typeof newFirstName !== 'string') {
+            this._firstName = 'undefined name';
+            return;
+        }
+        this._firstName = newFirstName;
+    },
+
+    //응용
+    get fullName() {
+        return (
+            this._firstName + ' ' + this._lastName + '입니다.'
+        )
+    },
+};
+
+//get 사용
+//obj.get함수명
+console.log(person2.firstName);     //jang
+
+//set 사용
+//obj.set함수명
+person2.firstName = 'kim';
+console.log(person2.firstName);  //kim
+
+person2.firstName = 1234;
+console.log(person2.firstName);  //undefined name
+
+//응용
+person2.firstName = 'lee';
+console.log(person2.fullName);  //lee hayeon입니다.
+
+
+
