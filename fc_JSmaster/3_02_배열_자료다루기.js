@@ -63,3 +63,46 @@ const newArr2 = [
 console.log(newArr2);   //[ 'JS', 'HTML', 'CSS', 'JAVA', 'TS' ]
 
 
+//배열 - 고차함수로 조작(내장 메서드)
+/**
+ * map
+ * filter
+ * reduce
+ */
+
+//map() - 배열을 조작해서 새로운 배열을 만들때 사용.
+const langs = ['JS', 'HTML', 'CSS'];
+
+const newLangs = langs.map(function(lang){
+    //배열 요소마다 이 함수가 실행
+    return lang + '언어';
+    //그 결과가 newLangs에 저장
+});
+
+console.log(newLangs);  //[ 'JS언어', 'HTML언어', 'CSS언어' ]
+
+//filter() - 특정조거에 맞는 배열을 만들 수 있음.
+const count = ['하나', '둘', '셋', 0, 1, 2, 3];
+
+const newCount = count.filter(function(element) {
+    ////배열 요소마다 이 함수가 실행
+    if(typeof element === 'number') {
+        //return element;
+        return true;
+        //true 만 넣어도 ok
+    }
+});
+
+console.log(newCount);    //[ 1, 2, 3 ]
+//왜 return element; 는 0이 안들어가질까?
+//
+
+const newCount2 = count.filter(function(element) {
+    ////배열 요소마다 이 함수가 실행
+    if(typeof element === 'string') {
+        //return element;
+        return true;
+    }
+});
+
+console.log(newCount2);     //[ '하나', '둘', '셋' ]
