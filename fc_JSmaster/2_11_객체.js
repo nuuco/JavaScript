@@ -121,6 +121,30 @@ console.log(person2.firstName);  //undefined name
 person2.firstName = 'lee';
 console.log(person2.fullName);  //lee hayeon입니다.
 
+//getter setter 똑똑하게 사용하기
+//getter와 setter를 ‘실제’ 프로퍼티 값을 감싸는 래퍼(wrapper)처럼 사용하면, 
+//메서드를 새로 만드는 일 없이 프로퍼티 값을 원하는 대로 통제할 수 있습니다.
+let user = {
+    get name() {
+    return this._name;
+    },
+
+    set name(value) {
+    if (value.length < 4) {
+            console.log("입력하신 값이 너무 짧습니다.");
+            return;
+        }
+        this._name = value;
+    }
+};
+  
+user.name = "Pete";
+console.log(user.name); // Pete
+
+user.name = "d"; // 너무 짧은 이름을 할당하려 함
+console.log(user.name); // Pete
+
+
 
 //<인스턴스>
 //인스턴스 = 유일한 객체
@@ -141,19 +165,16 @@ const me2 = {
 console.log(me === me2);    //false
 console.log(me.name === me2.name);    //true
 
-//객체의 프로퍼티들은 값으로 분류되 비교가능하나,
+//객체의 프로퍼티들은 값으로 분류되어 비교가능하나,
 //객체 그 자체 비교는 아무리 내용이 같아도 같다고 안나온다.
 //왜? 이 경우는 객체의 메모리주소를 비교! - 값이 같아도 결과가 다름.
 //고유한 하나하나의 객체가 하나하나의 인스턴스로 인정이 된다.
-//메모리에 올라가서 특정 메모리의 공간을 차지하고 있는 객페 = 인스턴스
+//메모리에 올라가서 특정 메모리의 공간을 차지하고 있는 객체 = 인스턴스
 //싱글리터럴로 만든 객체도 고유한 인스턴스,
 //생성자 함수로 만든 것도 고유한 인스턴스.
 
-const me = {
-    name: 'jang',
-    age: 18,
-    location: 'Korea',
-};
+
+
 //생성자
 //일정한 템플릿으로 비슷한 객체를 만들어 내고 싶을때 사용
 //생성자 함수명은 파스칼 케이스(첫문자 대문자)로 쓰는 암묵적 규칙

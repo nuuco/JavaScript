@@ -26,7 +26,7 @@ resetBtn.removeEventListener('click', function(event){
     console.dir(event);
 });
 
-//이벤트리스너 뒤에 옵션 넣기 - ?이벤트 전파 여부(boolean)
+//이벤트리스너 뒤에 옵션 넣기 - 이벤트 전파 여부(boolean)
 //(이벤트 타입, 실행 함수, 이벤트 전파 여부)
 resetBtn.addEventListener('click', function(event){
     console.dir(event);

@@ -51,38 +51,6 @@ const values = Object.values(data);
 
 console.log(values);
 /*
- [
-  'squadName',
-  'homeTown',
-  'formed',
-  'secretBase',
-  'active',
-  'members'
-]
-
-[Done] exited with code=0 in 0.819 seconds
-
-[Running] node "d:\00_SelfDev\NKLCB\programming\JavaScript\fc_JSmaster\3_01_자료다루기.js"
-[
-  'squadName',
-  'homeTown',
-  'formed',
-  'secretBase',
-  'active',
-  'members'
-]
-
-[Done] exited with code=0 in 0.299 seconds
-
-[Running] node "d:\00_SelfDev\NKLCB\programming\JavaScript\fc_JSmaster\3_01_자료다루기.js"
-[
-  'squadName',
-  'homeTown',
-  'formed',
-  'secretBase',
-  'active',
-  'members'
-]
 [
   'Super hero squad',
   'Metro City',
@@ -127,5 +95,32 @@ console.log(entries);
   [ 'secretBase', 'Super tower' ],
   [ 'active', true ],
   [ 'members', [ [Object], [Object], [Object] ] ]
+]
+ */
+
+console.log(entries[5]);
+/*
+[
+  'members',
+  [
+    {
+      name: 'Mika',
+      age: 21,
+      secretIdentity: 'Dan jukes',
+      powers: [Array]
+    },
+    {
+      name: 'Hally',
+      age: 23,
+      secretIdentity: 'Hanah kay',
+      powers: [Array]
+    },
+    {
+      name: 'Flame',
+      age: 110000,
+      secretIdentity: 'Jane orte',
+      powers: [Array]
+    }
+  ]
 ]
  */
